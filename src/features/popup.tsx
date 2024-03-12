@@ -1,11 +1,26 @@
+import type { PlasmoCSConfig } from "plasmo"
+import cssText from "data-text:~style.css"
+export const getStyle = () => {
+  const style = document.createElement("style")
+  style.textContent = cssText
+  return style
+}
+
+export const config: PlasmoCSConfig = {
+  matches: ["https://apas.umn.edu/*"],
+  css: ["overlay.css"]
+}
+
 const Popup = ({ dept, num }: { dept: string; num: number }) => {
+  console.log("Popup!")
   return (
-    <div className="plasmo-absolute plasmo-justify-center plasmo-w-72 plasmo-h-60 plasmo-z-50">
-      <h1>
-        {" "}
-        {dept} {num}{" "}
-      </h1>
-    </div>
+    <span
+      className="hw-top"
+      style={{
+        padding: 12
+      }}>
+      CSUI OVERLAY FIXED POSITION
+    </span>
   )
 }
 
